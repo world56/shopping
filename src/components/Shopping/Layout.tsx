@@ -4,8 +4,8 @@ import {
   SheetHeader,
   SheetTrigger,
   SheetContent,
+  SheetClose,
 } from "@/components/ui/sheet";
-
 interface TypeShoppingLayoutProps {
   // total: number;
   children?: React.ReactNode;
@@ -28,6 +28,7 @@ const ShoppingLayout: React.FC<TypeShoppingLayoutProps> = ({
       <SheetHeader>
         <SheetTitle className="text-2xl p-5 pb-0">购物车</SheetTitle>
       </SheetHeader>
+
       <div className="relative h-full">{children}</div>
     </SheetContent>
   </Sheet>
