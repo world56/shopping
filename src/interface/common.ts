@@ -5,4 +5,11 @@ export namespace TypeCommon {
   export interface Response<T> {
     data: T[];
   }
+
+  /**
+   * @name PrimaryKey 数据库主键
+   */
+  export interface PrimaryKey<T = number> {
+    id?: T;
+  }
 }

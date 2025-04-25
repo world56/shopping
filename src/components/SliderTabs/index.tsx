@@ -39,7 +39,7 @@ const SliderTabs: React.FC<TypeSliderTabsProps> = ({
   }, [tabWidths, activeIndex]);
 
   return (
-    <div className="relative mx-9">
+    <div className="relative mx-9 mb-5">
       <ol ref={ref} className="flex h-11 border-b border-b-gray-200 relative">
         {items.map((v, i) => (
           <li

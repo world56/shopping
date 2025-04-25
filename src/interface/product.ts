@@ -1,10 +1,12 @@
 import { ENUM_PRODUCT } from "@/enum/product";
 
+import type { TypeCommon } from "./common";
+
 export namespace TypeProduct {
   /**
    * @name DTO 购物车产品 公共数据传输对象
    */
-  export interface DTO {
+  export interface DTO extends TypeCommon.PrimaryKey {
     /**
      * @param auditStatus 上架状态
      */
@@ -64,4 +66,26 @@ export namespace TypeProduct {
      */
     mid: number;
   }
+
+  /**
+   * @name BoughtDTO 购买过记录DTO
+   */
+  export interface BoughtDTO {
+    licTypes: Array<"NP" | "LP" | "LPPLUS">; // 历史购买授权类型
+  }
+
+  /**
+   * @name VideoBoughtDTO 视频是否购记录
+   */
+  export interface VideoBoughtDTO extends BoughtDTO, Pick<VideoDTO, "vid"> {}
+
+  /**
+   * @name ImageBoughtDTO 图片是否购记录
+   */
+  export interface ImageBoughtDTO extends BoughtDTO, Pick<ImageDTO, "fid"> {}
+
+  /**
+   * @name AudioBoughtDTO 音频是否购记录
+   */
+  export interface AudioBoughtDTO extends BoughtDTO, Pick<AudioDTO, "mid"> {}
 }

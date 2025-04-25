@@ -65,6 +65,7 @@ function useRequest<TData = any, TParams extends any[] = any[]>(
     run,
     refresh,
     mutate,
+    setData
   };
 }
 
